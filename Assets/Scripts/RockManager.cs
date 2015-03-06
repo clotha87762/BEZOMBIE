@@ -46,7 +46,7 @@ public class RockManager : MonoBehaviour {
 		}
 
 
-		if (mpbar.curmp < 20) {
+		if (mpbar.curmp < cost) {
 			SpriteRenderer sprite_renderer = GetComponent<SpriteRenderer>();
 			sprite_renderer.color = new Color(1f,1f,1f,0.3f);
 			

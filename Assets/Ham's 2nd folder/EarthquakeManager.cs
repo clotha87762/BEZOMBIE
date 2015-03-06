@@ -18,7 +18,7 @@ public class EarthquakeManager : MonoBehaviour {
 		}
 		
 
-		if (mpbar.curmp < 25) {
+		if (mpbar.curmp < cost) {
 			SpriteRenderer sprite_renderer = GetComponent<SpriteRenderer>();
 			sprite_renderer.color = new Color(1f,1f,1f,0.3f);
 			
