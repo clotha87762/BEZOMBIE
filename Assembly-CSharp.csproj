@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{491B2E19-7304-4FB5-BECE-3D49C52C881A}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_6_2;UNITY_4_6;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_IL2CPP;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;UNITY5_SCRIPTING_IN_UNITY4;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Ham&apos; s folder\background.cs" />
+     <Compile Include="Assets\Ham&apos; s folder\human.cs" />
+     <Compile Include="Assets\Ham&apos;s 2nd folder\Earthquake.cs" />
+     <Compile Include="Assets\Ham&apos;s 2nd folder\EarthquakeManager.cs" />
+     <Compile Include="Assets\Ham&apos;s 2nd folder\Fog.cs" />
+     <Compile Include="Assets\Ham&apos;s 2nd folder\Tomb.cs" />
+     <Compile Include="Assets\Ham&apos;s 2nd folder\TombManager.cs" />
+     <Compile Include="Assets\Ham&apos;s 4th folder\BloodG.cs" />
+     <Compile Include="Assets\Ham&apos;s 4th folder\BloodGManager.cs" />
+     <Compile Include="Assets\Ham&apos;s 4th folder\Dizzy.cs" />
+     <Compile Include="Assets\Ham&apos;s 4th folder\Num2.cs" />
+     <Compile Include="Assets\Item.cs" />
+     <Compile Include="Assets\MENU\BuyButton.cs" />
+     <Compile Include="Assets\MENU\Help.cs" />
+     <Compile Include="Assets\MENU\HelpButton.cs" />
+     <Compile Include="Assets\MENU\LeaveButton.cs" />
+     <Compile Include="Assets\MENU\PauseButton.cs" />
+     <Compile Include="Assets\MENU\PauseControl.cs" />
+     <Compile Include="Assets\MENU\PauseScript.cs" />
+     <Compile Include="Assets\MENU\ResumeButton.cs" />
+     <Compile Include="Assets\MENU\StartButton.cs" />
+     <Compile Include="Assets\Scripts\Coin.cs" />
+     <Compile Include="Assets\Scripts\CoinManager.cs" />
+     <Compile Include="Assets\Scripts\FogManager.cs" />
+     <Compile Include="Assets\Scripts\Laser.cs" />
+     <Compile Include="Assets\Scripts\LaserManager.cs" />
+     <Compile Include="Assets\Scripts\MagicBall.cs" />
+     <Compile Include="Assets\Scripts\MagicManager.cs" />
+     <Compile Include="Assets\Scripts\ManManager.cs" />
+     <Compile Include="Assets\Scripts\Num0.cs" />
+     <Compile Include="Assets\Scripts\Num1.cs" />
+     <Compile Include="Assets\Scripts\PushButton.cs" />
+     <Compile Include="Assets\Scripts\Rock.cs" />
+     <Compile Include="Assets\Scripts\RockManager.cs" />
+     <Compile Include="Assets\Scripts\SkyBomb.cs" />
+     <Compile Include="Assets\Scripts\SkyBombmgr.cs" />
+     <Compile Include="Assets\Scripts\Zombie.cs" />
+     <Compile Include="Assets\Scripts\countDown.cs" />
+     <Compile Include="Assets\Scripts\hpbar.cs" />
+     <Compile Include="Assets\Scripts\mpbar.cs" />
+     <Compile Include="Assets\Shop\BuyScriptInShop.cs" />
+     <Compile Include="Assets\Shop\CheckItem.cs" />
+     <Compile Include="Assets\Shop\Exit.cs" />
+     <Compile Include="Assets\Shop\ItemBuyButton.cs" />
+     <Compile Include="Assets\Shop\Load.cs" />
+     <Compile Include="Assets\Shop\ShopScript.cs" />
+     <Compile Include="Assets\Shop\Tag2Script.cs" />
+     <Compile Include="Assets\Shop\TagScript.cs" />
+     <Compile Include="Assets\StarControl.cs" />
+     <Compile Include="Assets\TextScript.cs" />
+     <Compile Include="Assets\animation\ShowMoney.cs" />
+     <Compile Include="Assets\animation\max.cs" />
+     <Compile Include="Assets\animation\skin.cs" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{B2D7A066-B4BC-196C-7EB5-E5CDE52ABB4E}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
+      <Project>{13D3653C-8602-3FED-D38C-59FA5A3FD060}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
