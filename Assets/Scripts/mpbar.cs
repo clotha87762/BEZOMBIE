@@ -58,7 +58,7 @@ public class mpbar : MonoBehaviour {
 		}*/
 		
 		mpcolor = GetComponent<SpriteRenderer>();
-		mpcolor.color = new Color32((byte)((curmp / maxmp) * 155+100f), 0, (byte)((curmp / maxmp) * 155+100f), 255);
+		mpcolor.color = new Color32(0,(byte)((curmp / maxmp) * 155+100f), (byte)((curmp / maxmp) * 155+100f), 255);
 		
 	}
 	public void AdjMana(float f){
