@@ -60,7 +60,7 @@ public class SkyBombmgr : MonoBehaviour {
 			}
 			keyChecked = true;	
 		}
-		if (Input.GetKeyUp (KeyCode.Q)) {
+		if (Input.GetKeyUp (KeyCode.W)) {
 			if(y>-3){
 				if(mpbar.curmp>=cost){
 					bomb =(SkyBomb) Instantiate(bombPrefab,new Vector3(x+3,y+3,0),Quaternion.identity);

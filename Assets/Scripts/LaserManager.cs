@@ -32,7 +32,7 @@ public class LaserManager : MonoBehaviour {
 
 
 		
-		if (Input.GetKeyDown (KeyCode.W)) {
+		if (Input.GetKeyDown (KeyCode.Q)) {
 			if(mpbar.curmp>=cost){
 				audio.PlayOneShot (laserMusic);
 				laser =(Laser) Instantiate(LaserPrefab,new Vector3(0,5.3f,0),Quaternion.identity);
