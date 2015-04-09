@@ -37,11 +37,12 @@ public class SkyBombmgr : MonoBehaviour {
 		
 		if (Input.GetMouseButtonUp(0) && y > -3&&isChecked) { // Chcek if the skill should be casted! 
 			
-			if(mpbar.curmp>=cost){
-				bomb =(SkyBomb) Instantiate(bombPrefab,new Vector3(x+3,y+3,0),Quaternion.identity);
-				bomb.setDes(x,y);
+			/*if(mpbar.curmp>=cost){
+                shotRandom();
+                shotRandom();
+                shotRandom();
 				mpbar.curmp-=cost;
-			}
+			}*/
 			
 			x = originX;
 			y = originY;
@@ -54,20 +55,21 @@ public class SkyBombmgr : MonoBehaviour {
 			transform.position = new Vector3 (x, y, 0);
 			
 		}
-		if (Input.GetKeyDown(KeyCode.Q)) {
+		if (Input.GetKeyDown(KeyCode.W)) {
 			if (PauseControl.play == false) {
 				return;
 			}
 			keyChecked = true;	
 		}
 		if (Input.GetKeyUp (KeyCode.W)) {
-			if(y>-3){
+			//if(y>-3){
 				if(mpbar.curmp>=cost){
-					bomb =(SkyBomb) Instantiate(bombPrefab,new Vector3(x+3,y+3,0),Quaternion.identity);
-					bomb.setDes(x,y);
+					shotRandom();
+                    shotRandom();
+                    shotRandom();
 					mpbar.curmp-=cost;
 				}
-			}
+			//}
 			x = originX;
 			y = originY;
 			transform.position = new Vector3 (x, y, 0);
@@ -93,6 +95,12 @@ public class SkyBombmgr : MonoBehaviour {
 		if (PauseControl.play == false) {
 			return;
 		}
+        if(mpbar.curmp>=cost){
+                shotRandom();
+                shotRandom();
+                shotRandom();
+				mpbar.curmp-=cost;
+		}
 		
 		isChecked = true;	
 	}
@@ -113,6 +121,12 @@ public class SkyBombmgr : MonoBehaviour {
 	void OnMouseUp(){
 	}
 	
-	
+	void shotRandom(){
+        float yy=Random.Range(-2.0f,4.0f);
+        float xx=Random.Range(-(5.0f-yy)*2/9,(5.0f-yy)*2/9);
+        
+        bomb =(SkyBomb) Instantiate(bombPrefab,new Vector3(xx+3,yy+3,0),Quaternion.identity);
+		bomb.setDes(xx,yy);
+    }
 	
 }
