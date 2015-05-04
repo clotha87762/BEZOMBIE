@@ -26,7 +26,7 @@ public class StarControl : MonoBehaviour {
 			starTime+=Time.deltaTime;
 			endTime+=Time.deltaTime;
 			if(starTime>=0.5){
-				audio.PlayOneShot(starClip);
+				GetComponent<AudioSource>().PlayOneShot(starClip);
 				starTime = 0;
 				foreach( GameObject g in GameObject.FindGameObjectsWithTag("Human")){
 					

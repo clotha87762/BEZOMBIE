@@ -30,11 +30,11 @@ public class Earthquake: MonoBehaviour {
 		}
 		else if(xm == 0 && ym == 0 && zm == 0 && quakeflag == false) {
 			transform.position =new Vector3(0,0,-10);
-			camera.orthographicSize = 5;
+			GetComponent<Camera>().orthographicSize = 5;
 			if(quaketime!=0){
 				quake (quaketime-1);
 			}
-			else audio.Stop ();
+			else GetComponent<AudioSource>().Stop ();
 		}
 		if (xm != 0) {
 			float uxm = (xm>0)?Time.deltaTime*10:Time.deltaTime*10*-1f;
@@ -67,18 +67,18 @@ public class Earthquake: MonoBehaviour {
 			}
 			else
 				zm-=uzm;
-			camera.orthographic = true;
-			camera.orthographicSize -= uzm;
-			if(camera.orthographicSize>5){
+			GetComponent<Camera>().orthographic = true;
+			GetComponent<Camera>().orthographicSize -= uzm;
+			if(GetComponent<Camera>().orthographicSize>5){
 				zm=0;
 				uzm = 0;
-				camera.orthographicSize =5;
+				GetComponent<Camera>().orthographicSize =5;
 			}
 		}
 	}
 	public void quake(int count){
 		if (count == 5)
-			audio.PlayOneShot (quakeMusic);
+			GetComponent<AudioSource>().PlayOneShot (quakeMusic);
 		quaketime = count;
 		xm = Random.Range (0.2f, 0.3f);
 		ym = Random.Range (0.4f, 0.5f);

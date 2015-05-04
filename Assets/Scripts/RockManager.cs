@@ -73,9 +73,9 @@ public class RockManager : MonoBehaviour {
 			
 			timeCounter = 0;
 			interval = Random.Range (min, max);
-			rock =(Rock)Instantiate(prefabrock,new Vector3(0,5f,0),Quaternion.identity);
-			rocks.Add(rock);
-			rock.setSpeed(rockSpeed);
+			///rock =(Rock)Instantiate(prefabrock,new Vector3(0,5f,0),Quaternion.identity);
+			//rocks.Add(rock);
+			//rock.setSpeed(rockSpeed);
 			if(rockSpeed<=maxSpeed)
 				rockSpeed =rockSpeed+ 0.1f;
 			

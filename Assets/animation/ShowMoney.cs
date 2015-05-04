@@ -16,7 +16,7 @@ public class ShowMoney : MonoBehaviour {
 		txt.text=""+coinNum;
 	}
 	public void getCoin(){
-		audio.PlayOneShot (moneyM);
+		GetComponent<AudioSource>().PlayOneShot (moneyM);
 		coinNum += 1;
 	}
 }

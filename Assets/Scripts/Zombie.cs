@@ -15,6 +15,8 @@ public class Zombie : MonoBehaviour {
 	public float curMinSpeed;
 	public Vector2 tempVel;
 	public AudioClip music;
+	public int tempSpeed;
+	public int runningSpeed;
 
 
 	void Start () {
@@ -55,8 +57,8 @@ public class Zombie : MonoBehaviour {
 		else if(coll.gameObject.tag=="MagicBall"){
 			/*((Num0)GameObject.Find("Num0")).getScore = true;
 			Debug.Log("b!!");*/
-			audio.PlayOneShot (music);
-			Debug.Log("b!!");
+			GetComponent<AudioSource>().PlayOneShot (music);
+			//Debug.Log("b!!");
 			mp.AdjMana(10f);
 		}
 
@@ -80,7 +82,7 @@ public class Zombie : MonoBehaviour {
 
 		if (PauseControl.play == false) {
 
-			rigidbody2D.Sleep();
+			GetComponent<Rigidbody2D>().Sleep();
 			return;
 		}
 
@@ -90,15 +92,15 @@ public class Zombie : MonoBehaviour {
 		v = Input.GetAxis ("Horizontal") ;
 		
 		{
-			rigidbody2D.velocity = new Vector2(v*mSpeed,rigidbody2D.velocity.y);
+			GetComponent<Rigidbody2D>().velocity = new Vector2(v*mSpeed,GetComponent<Rigidbody2D>().velocity.y);
 		}
 
 		if (transform.position.x > 2.2f){
-			set= new Vector3(2.2f,rigidbody2D.position.y,0);
+			set= new Vector3(2.2f,GetComponent<Rigidbody2D>().position.y,0);
 			transform.position=set;
 		}
 		else if(transform.position.x<-2.2f){
-			set= new Vector3(-2.2f,rigidbody2D.position.y,0);
+			set= new Vector3(-2.2f,GetComponent<Rigidbody2D>().position.y,0);
 			transform.position=set;
 		}
 

@@ -43,9 +43,9 @@ public class PauseScript : MonoBehaviour {
 		t.DetermineText (true);
 		rect.anchoredPosition =new Vector2 (0, 0);
 		PauseControl.play = false;
-		int i;
 
-		object[] obj = GameObject.FindSceneObjectsOfType(typeof (GameObject));
+
+		object[] obj = GameObject.FindSceneObjectsOfType(typeof(GameObject));
 		foreach (object o in obj)
 		{
 			GameObject g = (GameObject) o;
@@ -86,8 +86,9 @@ public class PauseScript : MonoBehaviour {
 	public void GameOver(){
 
 
+		Item.ItemIndex = 0;
 
-		audio.PlayOneShot (failM);
+		GetComponent<AudioSource>().PlayOneShot (failM);
 		bgm.SetActive (false);
 
 		resume.SetActive (false);
@@ -102,7 +103,7 @@ public class PauseScript : MonoBehaviour {
 
 
 
-		object[] obj = GameObject.FindSceneObjectsOfType(typeof (GameObject));
+		object[] obj = GameObject.FindSceneObjectsOfType(typeof(GameObject));
 		foreach (object o in obj)
 		{
 			GameObject g = (GameObject) o;

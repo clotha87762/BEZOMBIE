@@ -13,10 +13,14 @@ public class Item : MonoBehaviour {
 	public StarControl sc;
 	public AudioClip mppotion ;
 	public AudioClip mphealer ;
+	public static int ItemIndex=0;
+	public int thisIndex;
 
 	void Start () {
 
-
+		ItemIndex += 1;
+		thisIndex = ItemIndex;
+		Debug.Log(thisIndex);
 		if (Load.MPPotion > 0) {
 			Debug.Log("mppotion");
 			item = Which.MPPotion;
@@ -47,10 +51,116 @@ public class Item : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if (Input.GetKeyDown(KeyCode.Alpha1)) {
 
+			if(thisIndex!=1)return;
+			Debug.Log("Index~~");
+			Debug.Log(thisIndex);
+			if (enable == false || PauseControl.play ==false)
+				return;
+			
+			if (item == Which.MPPotion) {
+				mpbar.curmp = 100;
+				enable=false;
+				GetComponent<AudioSource>().PlayOneShot(mppotion);
+				GetComponent<SpriteRenderer>().enabled=false;
+				//gameObject.SetActive(false);
+				
+			} else if (item == Which.Star) {
+				enable = false;
+				
+				foreach( GameObject g in GameObject.FindGameObjectsWithTag("Human")){
+					g.GetComponent<human>().cheatTime=false;
+					g.GetComponent<human>().OnDie(true);
+				}
+				sc.isStar=true;
+				sc.GetComponent<Animator>().SetTrigger("trigger2");
+				gameObject.SetActive(false);
+			}
+			else if(item == Which.MPHealer){
+				mpbar.autoHeal=true;
+				enable = false;
+				
+				GetComponent<AudioSource>().PlayOneShot(mphealer);
+				GetComponent<SpriteRenderer>().enabled=false;
+			}
+
+		}
+		else if(Input.GetKeyDown (KeyCode.Alpha2)){
+
+			if(thisIndex!=2)return;
+			Debug.Log("Index~~");
+			Debug.Log(thisIndex);
+			if (enable == false || PauseControl.play ==false)
+				return;
+			
+			if (item == Which.MPPotion) {
+				mpbar.curmp = 100;
+				enable=false;
+				GetComponent<AudioSource>().PlayOneShot(mppotion);
+				GetComponent<SpriteRenderer>().enabled=false;
+				//gameObject.SetActive(false);
+				
+			} else if (item == Which.Star) {
+				enable = false;
+				
+				foreach( GameObject g in GameObject.FindGameObjectsWithTag("Human")){
+					g.GetComponent<human>().cheatTime=false;
+					g.GetComponent<human>().OnDie(true);
+				}
+				sc.isStar=true;
+				sc.GetComponent<Animator>().SetTrigger("trigger2");
+				gameObject.SetActive(false);
+			}
+			else if(item == Which.MPHealer){
+				mpbar.autoHeal=true;
+				enable = false;
+				
+				GetComponent<AudioSource>().PlayOneShot(mphealer);
+				GetComponent<SpriteRenderer>().enabled=false;
+			}
+
+		}
+		else if(Input.GetKeyDown(KeyCode.Alpha3)){
+
+			if(thisIndex!=3)return;
+			Debug.Log("Index~~");
+			Debug.Log(thisIndex);
+			if (enable == false || PauseControl.play ==false)
+				return;
+			
+			if (item == Which.MPPotion) {
+				mpbar.curmp = 100;
+				enable=false;
+				GetComponent<AudioSource>().PlayOneShot(mppotion);
+				GetComponent<SpriteRenderer>().enabled=false;
+				//gameObject.SetActive(false);
+				
+			} else if (item == Which.Star) {
+				enable = false;
+				
+				foreach( GameObject g in GameObject.FindGameObjectsWithTag("Human")){
+					g.GetComponent<human>().cheatTime=false;
+					g.GetComponent<human>().OnDie(true);
+				}
+				sc.isStar=true;
+				sc.GetComponent<Animator>().SetTrigger("trigger2");
+				gameObject.SetActive(false);
+			}
+			else if(item == Which.MPHealer){
+				mpbar.autoHeal=true;
+				enable = false;
+				
+				GetComponent<AudioSource>().PlayOneShot(mphealer);
+				GetComponent<SpriteRenderer>().enabled=false;
+			}
+
+		}
 
 
 	}
+
+
 
 	void OnMouseDown(){
 
@@ -60,7 +170,7 @@ public class Item : MonoBehaviour {
 		if (item == Which.MPPotion) {
 			mpbar.curmp = 100;
 				enable=false;
-			audio.PlayOneShot(mppotion);
+			GetComponent<AudioSource>().PlayOneShot(mppotion);
 			GetComponent<SpriteRenderer>().enabled=false;
 			//gameObject.SetActive(false);
 
@@ -79,7 +189,7 @@ public class Item : MonoBehaviour {
 			mpbar.autoHeal=true;
 			enable = false;
 
-			audio.PlayOneShot(mphealer);
+			GetComponent<AudioSource>().PlayOneShot(mphealer);
 			GetComponent<SpriteRenderer>().enabled=false;
 		}
 

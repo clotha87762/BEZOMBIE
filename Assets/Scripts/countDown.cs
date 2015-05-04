@@ -16,10 +16,10 @@ public class countDown: MonoBehaviour {
 	void Update(){
 		if (t >= 1.0f) {
 			switch(i){
-			case 0: {txt.text="three";audio.PlayOneShot(count);t=0.0f;i++;break;}
-			case 1: {txt.text="two";audio.PlayOneShot(count);t=0.0f;i++;break;}
-			case 2: {txt.text="one";audio.PlayOneShot(count);t=0.0f;i++;break;}
-			case 3: {txt.text="start";audio.PlayOneShot(start);t=0.0f;i++;break;}
+			case 0: {txt.text="three";GetComponent<AudioSource>().PlayOneShot(count);t=0.0f;i++;break;}
+			case 1: {txt.text="two";GetComponent<AudioSource>().PlayOneShot(count);t=0.0f;i++;break;}
+			case 2: {txt.text="one";GetComponent<AudioSource>().PlayOneShot(count);t=0.0f;i++;break;}
+			case 3: {txt.text="start";GetComponent<AudioSource>().PlayOneShot(start);t=0.0f;i++;break;}
 			case 4: {bgm.SetActive (true);PauseControl.play=true;coin.SetActive(true);Destroy (gameObject);break;}
 			default: break;
 			}

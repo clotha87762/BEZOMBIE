@@ -10,12 +10,14 @@ public class Load : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
-		if (PlayerPrefs.HasKey ("TotalMoney")) {
+		/*if (PlayerPrefs.HasKey ("TotalMoney")) {
 			TotalMoney = PlayerPrefs.GetInt("TotalMoney");
 		}
 		else {
 			PlayerPrefs.SetInt("TotalMoney",0);
-		}
+		}*/
+		TotalMoney = 9999;
+		Item.ItemIndex = 0;
 		if (PlayerPrefs.HasKey ("equalSkin")){ 
 			equalSkin = PlayerPrefs.GetInt("equalSkin");
 		}

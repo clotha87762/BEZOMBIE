@@ -92,7 +92,7 @@ public class human : MonoBehaviour {
 		if (cheatTime) {
 
 			alpha = (alpha +0.1f)%1f;
-			renderer.material.color = new Color(1f,1f,1f,alpha);
+			GetComponent<Renderer>().material.color = new Color(1f,1f,1f,alpha);
 
 		}
 
@@ -129,7 +129,7 @@ public class human : MonoBehaviour {
 		cheatTimer += Time.deltaTime;
 		if (cheatTimer >= 1f) {
 			cheatTime = false;
-			renderer.material.color = new Color(1f,1f,1f,1f);
+			GetComponent<Renderer>().material.color = new Color(1f,1f,1f,1f);
 		}
 		
 		if (transform.position.y > 4 && cheatTime==false) {
@@ -148,8 +148,8 @@ public class human : MonoBehaviour {
 			
 		}
 		else if(transform.position.y < -3.3f){
-			if(playflag){audio.PlayOneShot(dieMusic);playflag=false;}
-			else;
+			if(playflag){GetComponent<AudioSource>().PlayOneShot(dieMusic);playflag=false;}
+
 		}
 		else if(transform.position.y < -3.5f){
 			if (ManManager.humanSpeed  < 7)
@@ -332,10 +332,11 @@ public class human : MonoBehaviour {
 		
 		if (cheatTime)
 			return;
-		audio.PlayOneShot (fallMusic);
+		GetComponent<AudioSource>().PlayOneShot (fallMusic);
 		Animator anim = GetComponent<Animator>();
 		
 		if (rightside == true) {
+
 			if (fallflag == false || falltimecounter<maxfalltime) {
 				anim.SetBool ("falldownR", true);
 				maxfalltime=falllegnth/maxhumanspeed;
@@ -376,7 +377,7 @@ public class human : MonoBehaviour {
 		if (dieflag)
 			return;
 
-		audio.PlayOneShot (fallMusic);
+		GetComponent<AudioSource>().PlayOneShot (fallMusic);
 
 		ManManager.numberOfHuman -= 1;
 		ManManager.humanAlreadyKilled+=1;

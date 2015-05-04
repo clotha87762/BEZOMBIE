@@ -47,7 +47,7 @@ public class SkyBomb : MonoBehaviour {
 			transform.localScale = new Vector3 (temp * 2 + 0.5f, temp * 2 + 0.5f, temp * 2 + 0.5f);
 			if (transform.position.x < endX && transform.position.y < endY){
 				Collider2D[] hithumans =Physics2D.OverlapCircleAll(new Vector2(transform.position.x,transform.position.y),1f*temp);
-				audio.PlayOneShot(fireMusic);
+				GetComponent<AudioSource>().PlayOneShot(fireMusic);
 				int i=0;
 
 				while (i < hithumans.Length) {

@@ -23,8 +23,20 @@ public class PushButton : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+
+
+
+
 		if (PauseControl.play == false) {
 			return;
+		}
+
+		if (pressed) {
+			setHumansSlow ();
+		} else if (!pressed) {
+
+			if(mpbar.curmp<100f)
+			mpbar.curmp+=0.1f;
 		}
 
 
@@ -33,7 +45,7 @@ public class PushButton : MonoBehaviour {
 			pressed = true;
 			zombie.PlusSpeed (0.3f);
 
-			setHumansSlow();
+
 		}
 		
 		
@@ -61,14 +73,16 @@ public class PushButton : MonoBehaviour {
 	}
 	
 	void setHumansSlow(){
+		
 		if (cflag == false) {
 			return;
 		}
 		else
 			cflag = false;
+
 		foreach(human man in mmgr.men)
 		{
-			man.OnSlow(human.maxhumanspeed*slowSpeed+0.05f);
+			man.OnSlow(human.maxhumanspeed*slowSpeed*0.6f+0.05f);
 		}
 
 	}

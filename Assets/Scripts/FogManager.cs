@@ -17,7 +17,7 @@ public class FogManager : MonoBehaviour {
 	void Start () {
 		cost = 40f;
 		isTriggered = false;
-		triggerInterval = 5f;
+		triggerInterval = 3.5f;
 		ps1 = p1.GetComponent<ParticleSystem> ();
 		ps2 = p2.GetComponent<ParticleSystem> ();
 		timer = 0;
@@ -46,7 +46,7 @@ public class FogManager : MonoBehaviour {
 				isTriggered = true;
 				ps1.Play ();
 				ps2.Play ();
-				audio.PlayOneShot(fogMusic);
+				GetComponent<AudioSource>().PlayOneShot(fogMusic);
 				mpbar.curmp-=cost;
 			}
 		}
@@ -76,7 +76,7 @@ public class FogManager : MonoBehaviour {
 			if(timer>=triggerInterval){
 				ps1.Stop();
 				ps2.Stop();
-				audio.Stop ();
+				GetComponent<AudioSource>().Stop ();
 				isTriggered=false;
 				timer=0;
 			}
@@ -92,7 +92,7 @@ public class FogManager : MonoBehaviour {
 			isTriggered = true;
 			ps1.Play ();
 			ps2.Play ();
-			audio.PlayOneShot(fogMusic);
+			GetComponent<AudioSource>().PlayOneShot(fogMusic);
 			mpbar.curmp-=cost;
 		}
 		
