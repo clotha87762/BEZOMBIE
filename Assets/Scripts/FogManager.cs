@@ -15,7 +15,7 @@ public class FogManager : MonoBehaviour {
 	public AudioClip fogMusic;
 	
 	void Start () {
-		cost = 40f;
+		cost = 35f;
 		isTriggered = false;
 		triggerInterval = 3.5f;
 		ps1 = p1.GetComponent<ParticleSystem> ();

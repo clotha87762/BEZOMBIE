@@ -12,7 +12,7 @@ public class SkyBombmgr : MonoBehaviour {
 	
 	public bool keyChecked;
 	void Start () {
-		cost = 15f;
+		cost = 25f;
 		isChecked = false;
 		originX = transform.position.x;
 		originY = transform.position.y;

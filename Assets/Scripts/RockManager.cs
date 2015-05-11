@@ -20,7 +20,7 @@ public class RockManager : MonoBehaviour {
 	public float intervalForSkill=0.5f;
 	public int j;
 	void Start () {
-		cost = 30f;
+		cost = 25f;
 		rocks = new List<Rock> ();
 		min = 4f;
 		max = 8f;

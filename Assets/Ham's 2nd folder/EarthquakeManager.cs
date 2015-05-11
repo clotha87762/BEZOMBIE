@@ -8,7 +8,7 @@ public class EarthquakeManager : MonoBehaviour {
 	public GameObject[] humans;
 	// Use this for initialization
 	void Start () {
-		cost = 35f;
+		cost = 30f;
 	}
 	
 	// Update is called once per frame
