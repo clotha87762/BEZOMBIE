@@ -42,6 +42,7 @@ public class PushButton : MonoBehaviour {
 
 		if(Input.GetKeyDown (KeyCode.S)){
 			ani.SetBool ("Pressed", true);
+			zombie.OnPushButton();
 			pressed = true;
 			zombie.PlusSpeed (0.3f);
 
@@ -57,6 +58,7 @@ public class PushButton : MonoBehaviour {
 		else if(Input.GetKeyUp (KeyCode.S)){
 			ani.SetBool ("Pressed", false);
 			pressed = false;
+			zombie.ReturnSpeed();
 		}
 		
 		zombie.PlusSpeed (Time.deltaTime*-2);

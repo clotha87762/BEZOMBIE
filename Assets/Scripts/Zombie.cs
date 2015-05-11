@@ -15,12 +15,12 @@ public class Zombie : MonoBehaviour {
 	public float curMinSpeed;
 	public Vector2 tempVel;
 	public AudioClip music;
-	public int tempSpeed;
+	public float tempSpeed;
 	public int runningSpeed;
-
+	bool onPush;
 
 	void Start () {
-		
+		onPush = false;
 		Animator anim = GetComponent<Animator>();
 		anim.speed=1;
 		curMinSpeed =1;
@@ -28,16 +28,33 @@ public class Zombie : MonoBehaviour {
 	
 	public void ChangeSpeed(float newspeed){
 
-
+		if (onPush)
+			return;
 		Animator anim = GetComponent<Animator>();
 		if (newspeed <= anim.speed)
 			return;
+		tempSpeed = anim.speed;
 
 		anim.speed=newspeed;
 		curMinSpeed = newspeed;
 	}
 
+	public void OnPushButton(){
+		Animator anim = GetComponent<Animator>();
+		tempSpeed = anim.speed;
+		anim.speed = anim.speed + 3.0f;
+		onPush = true;
+	}
+
+	public void ReturnSpeed(){
+		Animator anim = GetComponent<Animator>();
+		anim.speed = tempSpeed;
+		onPush = false;
+	}
+
 	public void PlusSpeed(float delta){
+		if (onPush)
+			return;
 		Animator anim = GetComponent<Animator>();
 		if(anim.speed+delta>=curMinSpeed)
 		anim.speed= anim.speed + delta;
